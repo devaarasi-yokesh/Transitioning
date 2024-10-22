@@ -9,7 +9,16 @@ function doScale(){
     for(let i=0;i<=r_1div.length-1;i++){
         let x = xval.value;
         let y = yval.value;
-        r_1div[i].style.transform = `scale(${x},${y})`;
+        if(x && y){
+            r_1div[i].style.transform = `scale(${x},${y})`;
+        }
+        else if(!y){
+            r_1div[i].style.transform = `scaleX(${x})`;
+        }
+        else if(!x){
+            r_1div[i].style.transform = `scaleY(${y})`;
+        }
+        
     }
 }
 
@@ -30,7 +39,7 @@ rotateButton.addEventListener("click",()=>{
 })
 
 const row_three = document.querySelector(".row3");
-const r_3div = row_one.getElementsByTagName("div");
+const r_3div = row_three.getElementsByTagName("div");
 const x_val = document.getElementById("skew-x-axis");
 const y_val = document.getElementById("skew-y-axis");
 
@@ -39,8 +48,60 @@ function doSkew(){
    
     for(let i=0;i<=r_3div.length-1;i++){
         let x_one = String(x_val.value) + "deg";
-        let y_ = String(y_val.value) + "deg";
-        console.log(x_,y_);
-        r_3div[i].style.transform = `skew(${x_one})`;
+        let y_two = String(y_val.value) + "deg";
+    if(x_one && y_two){
+            r_3div[i].style.transform = `skew(${x_one},${y_two})`;
+        }
+        else if(!y_two){
+            r_3div[i].style.transform = `skewX(${x_one})`;
+        }
+        else if(!x_one){
+            r_3div[i].style.transform = `skewY(${y_two})`;
+        }
+    }
+}
+
+
+
+const row_four = document.querySelector(".row4");
+const r_4div = row_four.getElementsByTagName("div");
+const x_ = document.getElementById("trans-x-axis");
+const y_ = document.getElementById("trans-y-axis");
+
+function doTranslate(){
+    for(let i=0;i<=r_4div.length-1;i++){
+        let x_one = String(x_.value) + "px";
+        let y_two = String(y_.value) + "px";
+    if(x_one && y_two){
+            r_4div[i].style.transform = `translate(${x_one},${y_two})`;
+        }
+        else if(!y_two){
+            r_4div[i].style.transform = `translateX(${x_one})`;
+        }
+        else if(!x_one){
+            r_4div[i].style.transform = `translateY(${y_two})`;
+        }
+    }
+}
+
+const row_five = document.querySelector(".row5");
+const r_5div = row_five.getElementsByTagName("div");
+const a_ = document.getElementById("mat-a");
+const b_ = document.getElementById("mat-b");
+const c_ = document.getElementById("mat-c");
+const d_ = document.getElementById("mat-d");
+const tx_ = document.getElementById("mat-tx");
+const ty_ = document.getElementById("mat-ty");
+
+function doMatrix(){
+    let a = a_.value;
+    let b = b_.value;
+    let c = c_.value;
+    let d = d_.value;
+    let tx = tx_.value;
+    let ty = ty_.value;
+    for(let i=0;i<= r_5div.length-1;i++){
+        // r_5div[i].style.transform = "matrix(2,2deg,5deg,4,23,33)";
+        r_5div[i].style.transform = `matrix(${a},${b},${c},${d},${tx},${ty})`;
     }
 }
