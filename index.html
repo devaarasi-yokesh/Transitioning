@@ -4,30 +4,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BoXiee</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="src/css/style.css">
     </head>
     <body>
         <h1 class="text-center">Transitioning</h1>
-        <div class="scle-container">
-            <h3 class="text-center">ScaleX</h3>
-            <div class="container-fluid row1">
+        <div class="scale-container parent">
+            <h3 class="text-center">Scale</h3>
+            <div class="grid_container row1">
                 <div></div>
-                <div></div>
-                <div></div>
-                <div></div> 
-                <div></div>
-                <div></div>
+                
             </div>
             <label for="x-axis">ScaleX</label>
             <input type="number" id="x-axis">
             <label for="y-axis">ScaleY</label>
             <input type="number" id="y-axis">
-             <button type="button" onclick="doScale()">Scale</button>
+            <button type="button" onclick="doScale()">Scale</button>
         </div>
         
-<div class="translate_container">
-    <h3 class="text-center">Translate</h3>
-    <div class="container-fluid row2">
+<div class="rotate_container parent">
+    <h3 class="text-center">Rotate</h3>
+    <div class="grid_container row2">
         <div></div>
         <div></div>
         <div></div>
@@ -42,9 +38,9 @@
     <input type="number" id="rotate">
     <button type="button" class="rotateBut">Rotate</button>
 </div>
-       <div class="skew_container">
+       <div class="skew_container parent">
         <h3>Skew</h3>
-        <div class="container-fluid row3">
+        <div class="grid_container row3">
             <div></div>
             <div></div>
             <div></div>
@@ -66,8 +62,9 @@
              <button type="button" onclick="doSkew()">Skew</button>
        </div>
         
-
-        <div class="container-fluid row4">
+<div class="translate_container parent">
+    <h3>Translate</h3>
+        <div class="grid_container row4">
             <div></div>
             <div></div>
             <div></div>
@@ -82,6 +79,48 @@
             <div></div>
             <div></div>
         </div>
+        <label for="trans-x-axis">TranslateX</label>
+        <input type="number" id="trans-x-axis">
+        <label for="trans-y-axis">TranslateY</label>
+        <input type="number" id="trans-y-axis">
+         <button type="button" onclick="doTranslate()">Translate</button>
+
+    </div>
+
+            
+<div class="matrix_container parent">
+    <h3>Matrix</h3>
+        <div class="grid_container row5">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div> 
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div> 
+            <div></div>
+            <div></div>
+        </div>
+        <label for="mat-a">ScaleX</label>
+        <input type="number" id="mat-a">
+        <label for="mat-b">SkewY</label>
+        <input type="number" id="mat-b">
+        <label for="mat-c">SkewX</label>
+        <input type="number" id="mat-c">
+        <label for="mat-d">ScaleY</label>
+        <input type="number" id="mat-d">
+        <label for="mat-tx">TranslateX</label>
+        <input type="number" id="mat-tx">
+        <label for="mat-ty">TranslateY</label>
+        <input type="number" id="mat-ty">
+         <button type="button" onclick="doMatrix()">Matrix</button>
+
+    </div>
+
         <script src="script.js"></script>
     </body>
 </html>
